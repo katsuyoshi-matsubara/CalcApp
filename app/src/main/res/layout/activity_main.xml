@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalcResult">
+    tools:context=".CalcResult"
+    tools:showIn="@layout/activity_main">
 
     //センターに何もないビューを設置しその周りに配置
     <TextView
@@ -11,14 +13,18 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:id="@+id/center"/>
+
+    // 「|」の前後にスペース入るとダメ
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:hint="Input Number"
-        android:inputType="numberDecimal"/>
+        android:textAlignment="textEnd"
+        android:textSize="10pt"
+        android:hint="Input number"
+        android:inputType="numberDecimal|numberSigned"/>
 
     <EditText
         android:id="@+id/editText2"
@@ -26,8 +32,10 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:hint="Input Number"
-        android:inputType="numberDecimal"/>
+        android:textAlignment="textEnd"
+        android:textSize="10pt"
+        android:hint="Input number"
+        android:inputType="numberDecimal|numberSigned"/>
 
     <Button
         android:id="@+id/button1"
@@ -35,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/button2"
-        android:text="+" />
+        android:text="＋" />
 
     <Button
         android:id="@+id/button2"
